@@ -13,19 +13,19 @@ class BeneficiariesForm(forms.ModelForm):
     surname = forms.CharField(label='Surname', max_length=200, required=True,
                             widget=forms.TextInput(
                                 attrs={'class': 'form-control',
-                                       'placeholder': 'Nombre'}
+                                       'placeholder': 'Surname'}
                             ))
-    given_name = forms.CharField(label='Given Name', max_length=200, required=True,
+    given_name = forms.CharField(label='Given Name', max_length=200, required=False,
                              widget=forms.TextInput(
                                  attrs={'class': 'form-control',
-                                        'placeholder': 'Apellido'}
+                                        'placeholder': 'Given Name'}
                              ))
     sex = forms.ChoiceField(choices=SEX_CHOICES, required=True)
     date_of_birth = forms.DateField(widget=DateInput(attrs={
             'class': 'form-control datetimepicker-input'}))
     place_of_birth = CountryField().formfield()
     height = forms.IntegerField(label='Height',
-                                   required=False,
+                                   required=True,
                                    widget=forms.NumberInput(attrs={'class': 'form-control',
                                                                    'placeholder': 'height'
                                                                    }
@@ -33,12 +33,12 @@ class BeneficiariesForm(forms.ModelForm):
                                    )
     partner = forms.ChoiceField(choices=PARTNER_CHOICES, required=True)
     children = forms.BooleanField(label='Children',
-                                         required=False,
+                                         required=True,
                                          widget=forms.CheckboxInput(
                                              attrs={'class': 'form-control', 'placeholder': 'Children'})
                                          )
     number_children = forms.IntegerField(label='number children',
-                                   required=False,
+                                   required=True,
                                    widget=forms.NumberInput(attrs={'class': 'form-control',
                                                                    'placeholder': 'height'
                                                                    }

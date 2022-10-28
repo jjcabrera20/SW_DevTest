@@ -14,4 +14,4 @@ class Beneficiaries(models.Model):
     height = models.PositiveIntegerField(null=True)
     partner = models.TextField(null=True, choices=PARTNER_CHOICES)
     children = models.BooleanField(null=True)
-    number_children = models.PositiveIntegerField()
+    number_children = models.PositiveIntegerField(null=True)
