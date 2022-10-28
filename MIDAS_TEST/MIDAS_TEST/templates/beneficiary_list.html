@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">SurName</th>
+        <th scope="col">Given Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for beneficiary in beneficiaries %}
+    <tr>
+        <th scope="row">{{beneficiary.surname}}</th>
+        <td>{{beneficiary.given_name}}</td>
+        <td>
+                        <a href="#">
+                        <i class="fas fa-eye"></i>
+                        </a>
+                        <span> &nbsp; </span>
+                        <a href="#">
+                        <i class="fas fa-marker"></i>
+                        </a>
+                        <span> &nbsp; </span>
+                        <a href="#">
+                        <i class="far fa-trash-alt"></i>
+                        </a>
+
+    </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

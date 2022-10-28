@@ -6,7 +6,7 @@ app_name ='beneficiaries_app'
 
 urlpatterns = [
     path('', views.index, name='wellcome'),
-    #path('persona_new/', views.persona_new, name='persona_new'),
+    path('beneficiary_new/', views.beneficiary_new, name='beneficiary_new'),
     #path('persona_edit/<int:persona_id>/', views.persona_edit, name='persona_edit'),
-    #path('persona_list/', views.persona_list, name='persona_list'),
+    path('beneficiary_list/', views.beneficiary_list, name='beneficiary_list'),
 ]

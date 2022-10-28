@@ -1,17 +1,8 @@
 from django.db import models
 from django_countries.fields import CountryField
+from .choices import *
 import requests
 # Create your models here.
-SEX_CHOICES= (
-('F','Female'),
-('M','Male'),
-('O','other'),
-)
-
-PARTNER_CHOICES = (
-('Y','Yes'),
-('N','No'),
-)
 
 
 class Beneficiaries(models.Model):
