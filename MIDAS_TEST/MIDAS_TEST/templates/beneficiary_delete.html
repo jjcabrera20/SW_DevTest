@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-5 container mt-5">
+        <div class="row">
+            <div class="col-md-6 text-left">
+                <form method="post" action=".">
+                    {% csrf_token %}
+                    <h2>Delete beneficiary "{{ beneficiary.given_name }}"?</h2>
+                    <button type="submit" value="aceptar" class="btn btn-warning">Aceptar</button>
+                    <a href = "{% url 'beneficiaries_app:beneficiary_list' %}" class="btn btn-dark">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
